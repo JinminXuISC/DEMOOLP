@@ -17,7 +17,7 @@ class Patients extends Component {
   componentDidMount() {
     const username = "superuser";
     const password = "ISCDEMO";
-    const apiUrl = "http://13.55.11.210/csp/healthshare/demo/fhir/r4";
+    const apiUrl = "http://127.0.0.1/csp/healthshare/demo/fhir/r4";
     
     fetch(`${apiUrl}/Condition`, {
       method: 'GET',

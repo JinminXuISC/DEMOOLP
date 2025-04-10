@@ -3,7 +3,7 @@ import axios from "axios";
 import { Container, Row, Col, Card, Accordion, Button, Form, Navbar, Nav, ListGroup } from "react-bootstrap";
 import logo from "../images/logo.png";
 
-const FHIR_BASE_URL = "http://13.55.11.210/csp/healthshare/demo/fhir/r4";
+const FHIR_BASE_URL = "http://127.0.0.1/csp/healthshare/demo/fhir/r4";
 const username = "superuser";
 const password = "ISCDEMO";
 const ALLOWED_RESOURCES = ["Patient", "Condition", "Practitioner", "Observation", "Questionnaire", "Encounter", "Location"];

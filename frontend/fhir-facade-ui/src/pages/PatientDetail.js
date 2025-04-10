@@ -19,8 +19,8 @@ const PatientDetail = () => {
 
   const username = "superuser";
   const password = "ISCDEMO";
-  const apiUrl = `http://13.55.11.210/csp/healthshare/demo/fhir/r4/Patient/${id}/$everything`;
-  const suggestUrl = `http://13.55.11.210/csp/healthshare/demo/fhir/r4/Patient/${id}/$vector-diagnosis`
+  const apiUrl = `http://127.0.0.1/csp/healthshare/demo/fhir/r4/Patient/${id}/$everything`;
+  const suggestUrl = `http://127.0.0.1/csp/healthshare/demo/fhir/r4/Patient/${id}/$vector-diagnosis`
 
   const capitalizeName = (name) => {
     return name
