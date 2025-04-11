@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Container, Tabs, Tab, Navbar, Nav } from "react-bootstrap";
 import PractitionerTable from "../components/PractitionerTable";
 import PatientTable from "../components/PatientsTable";
+import Assistent from "../components/Assistant"
 import FhirResourceExplorer from "../pages/FhirResourceExplorer";
 import logo from "../images/logo.png";
 
@@ -48,6 +49,9 @@ function Home() {
                     </Tab>
                     <Tab eventKey="patients" title={<strong>Patients</strong>}>
                         <PatientTable />
+                    </Tab>
+                    <Tab eventKey="Assistant" title={<strong>Assistant</strong>}>
+                        <Assistent />
                     </Tab>
                 </Tabs>
             </Container>

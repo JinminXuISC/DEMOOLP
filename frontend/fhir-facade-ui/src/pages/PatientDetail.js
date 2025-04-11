@@ -15,12 +15,12 @@ const PatientDetail = () => {
   const [showSuggestionTable, setShowSuggestionTable] = useState(false);  // Controls visibility of suggestion table
   const [showDiagnosisInput, setShowDiagnosisInput] = useState(false); // Controls the visibility of the textbox
   const [newDiagnosis, setNewDiagnosis] = useState(""); // Stores the diagnosis input
-  const [showPatientSummaryIframe, setShowPatientSummaryIframe] = useState(false);
+  //const [showPatientSummaryIframe, setShowPatientSummaryIframe] = useState(false);
 
   const username = "superuser";
   const password = "ISCDEMO";
-  const apiUrl = `http://127.0.0.1/csp/healthshare/demo/fhir/r4/Patient/${id}/$everything`;
-  const suggestUrl = `http://127.0.0.1/csp/healthshare/demo/fhir/r4/Patient/${id}/$vector-diagnosis`
+  const apiUrl = `http://13.55.11.210/csp/healthshare/demo/fhir/r4/Patient/${id}/$everything`;
+  const suggestUrl = `http://13.55.11.210/csp/healthshare/demo/fhir/r4/Patient/${id}/$vector-diagnosis`
 
   const capitalizeName = (name) => {
     return name
@@ -90,7 +90,7 @@ const PatientDetail = () => {
   }, [id]);
 
   const fetchDiagnosisSuggestions = () => {
-    setShowPatientSummaryIframe(false);
+    //setShowPatientSummaryIframe(false);
     setShowDiagnosisInput(false);
     setFetchingSuggestions(true);
     fetch(suggestUrl, {
@@ -162,7 +162,7 @@ const PatientDetail = () => {
   };
 
   const handleAddDiagnosisClick = () => {
-    setShowPatientSummaryIframe(false); 
+    // setShowPatientSummaryIframe(false); 
     setShowSuggestionTable(false)
     setShowDiagnosisInput(true);
   };
@@ -209,9 +209,9 @@ const PatientDetail = () => {
       });
   };
 
-  const handleTogglePatientSummaryIframe = () => {
-    setShowPatientSummaryIframe(prev => !prev);
-  };
+  // const handleTogglePatientSummaryIframe = () => {
+  //   setShowPatientSummaryIframe(prev => !prev);
+  // };
 
 
 
@@ -249,19 +249,12 @@ const PatientDetail = () => {
             <Button variant="outline-success" className="w-100 mb-2" onClick={handleAddDiagnosisClick}>
               Add Diagnosis
             </Button>
-            <Button
-              variant="outline-primary"
-              className="w-100 mb-2"
-              onClick={handleTogglePatientSummaryIframe}
-            >
-              {/* {showPatientSummaryIframe ? "Close Patient Summary" : "Patient Summary"} */}
-              Assistant
-            </Button>
+           
           </Col>
-        )}
+        )} 
 
       <Col md={diagnoses.length === 0 ? 7 : 9} className="p-4">
-        {showPatientSummaryIframe ? (
+        {/* {showPatientSummaryIframe ? (
           // 👇 Only show iframe, everything else is hidden
           <div style={{ width: "100%", height: "100%" }}>
             <h2>Assistant</h2>
@@ -273,9 +266,8 @@ const PatientDetail = () => {
               style={{ border: "1px solid #ccc", borderRadius: "8px" }}
             />
           </div>
-        ) : (
-          // Normal patient detail view
-          <>
+        ) : ( */}
+        <>
             <h3>Patient Details</h3>
             {loading && <Spinner animation="border" />}
             {error && <Alert variant="danger">{error}</Alert>}
@@ -359,7 +351,7 @@ const PatientDetail = () => {
               </div>
             )}
           </>
-        )}
+        {/* )} */}
       </Col>
       </Row>
     </Container>
